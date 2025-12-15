@@ -1,11 +1,4 @@
-# Obsidian workspace and cache
 .obsidian/workspace
 .obsidian/cache
-
-# Log files
 *.log
-
-# Temporary system files
 .DS_Store
-
-
