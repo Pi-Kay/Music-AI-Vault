@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Document Music AI.md",
+                "file": "Music AI Document.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Document Music AI"
+              "title": "Music AI Document"
             }
           }
         ]
@@ -188,9 +188,11 @@
   },
   "active": "bb869184261f0edc",
   "lastOpenFiles": [
+    "attachments/Guidance Music Ai Document copy.pdf",
+    "attachments/Guidance Music Ai Document.pdf",
     "attachments/Document Music AI.pdf",
     "Document Music AI.pdf",
-    "Document Music AI.md",
+    "Music AI Document.md",
     "images/cover-image-abstract-elements-light.jpg",
     "attachments/Guidance on Personal Data in Generative Music Systems.pdf",
     "attachments",
@@ -202,8 +204,6 @@
     "Guidance on Personal Data in Generative Music Systems.pdf",
     "Welcome.md",
     "plugins/yet-another-obsidian-synchronizer/styles.css",
-    "plugins/yet-another-obsidian-synchronizer/manifest.json",
-    "plugins/yet-another-obsidian-synchronizer/main.js",
-    "plugins/terminal/styles.css"
+    "plugins/yet-another-obsidian-synchronizer/manifest.json"
   ]
 }
