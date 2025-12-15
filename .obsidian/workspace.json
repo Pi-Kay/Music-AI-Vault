@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Open-Source Science Guidance.md",
+                "file": "Document Music AI.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Open-Source Science Guidance"
+              "title": "Document Music AI"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 389.5,
-    "collapsed": true
+    "width": 389.5
   },
   "right": {
     "id": "ca48f53061da6920",
@@ -189,7 +188,9 @@
   },
   "active": "bb869184261f0edc",
   "lastOpenFiles": [
-    "Open-Source Science Guidance.md",
+    "attachments/Document Music AI.pdf",
+    "Document Music AI.pdf",
+    "Document Music AI.md",
     "images/cover-image-abstract-elements-light.jpg",
     "attachments/Guidance on Personal Data in Generative Music Systems.pdf",
     "attachments",
@@ -203,7 +204,6 @@
     "plugins/yet-another-obsidian-synchronizer/styles.css",
     "plugins/yet-another-obsidian-synchronizer/manifest.json",
     "plugins/yet-another-obsidian-synchronizer/main.js",
-    "plugins/terminal/styles.css",
-    "plugins/terminal/manifest.json"
+    "plugins/terminal/styles.css"
   ]
 }

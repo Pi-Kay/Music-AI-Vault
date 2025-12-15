@@ -1,158 +1,177 @@
-/* Hide the H1 in preview and print */
-.markdown-preview-view h1:first-of-type, 
-.markdown-rendered h1:first-of-type { 
-    color: #666 !important; 
-    font-family: 'Inter', -apple-system, sans-serif !important; 
-    font-size: 18px !important; 
-    font-weight: 400 !important; 
-    margin-bottom: 20px !important; 
+/* ============================================
+   GUIDANCE COVER CSS - COMPLETE FINAL VERSION
+   ============================================ */
+
+/* Hide ONLY the document title H1, not section headings */
+.markdown-preview-view > h1:first-child,
+.markdown-rendered > h1:first-child {
+    display: none !important;
 }
 
-/* For PDF export - hide header */
-@media print { 
-    .print h1:first-of-type { 
-        display: none !important; 
-    } 
-}
-
-/* Cover styling classes */
-.top-border { 
-    border-top: 0.5px solid #999; 
-    margin-bottom: 25px; 
-}
-
-.large-title { 
-    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', -apple-system, sans-serif; 
-    font-size: 65px; 
-    font-weight: 400; 
-    line-height: 1.15; 
-    margin-bottom: 10px; 
-    letter-spacing: 0.02em; 
-    color: #ffffff; 
-}
-
-.medium-title { 
-    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', -apple-system, sans-serif; 
-    font-size: 52px; 
-    font-weight: 100; 
-    line-height: 1.15; 
-    margin-bottom: 25px; 
-    letter-spacing: 0.03em; 
-    color: #ffffff; 
-}
-
-.bottom-border { 
-    border-bottom: 0.5px solid #999; 
-    margin-bottom: 40px; 
-}
-
-.cover-flex { 
-    display: flex; 
-    align-items: flex-start; 
-    margin-bottom: 40px; 
-}
-
-.image-container { 
-    flex-shrink: 0; 
-    margin-right: 50px; 
-}
-
-.cover-text { 
-    flex-grow: 1; 
-    text-align: right; 
-    font-family: 'Inter', -apple-system, sans-serif; 
-    font-size: 18px; 
-    line-height: 20pt; 
-    color: #666; 
-    padding-top: 10px; 
-}
-
-.bold-text { 
-    font-weight: 700; 
-}
-
-.normal-text { 
-    font-weight: 400; 
-}
-
-.version-info { 
-    font-family: 'Inter', -apple-system, sans-serif; 
-    font-size: 18px; 
-    font-weight: 400; 
-    line-height: 21pt; 
-    margin-bottom: 40px; 
-}
-
-/* Preview fixes - force flex layout and visibility */
-.markdown-preview-view .cover-flex { 
-    display: flex !important; 
-    align-items: flex-start !important; 
-    margin-bottom: 40px !important; 
-    flex-wrap: nowrap !important; 
-}
-
-.markdown-preview-view .image-container { 
-    flex-shrink: 0 !important; 
-    margin-right: 50px !important; 
-}
-
-.markdown-preview-view .cover-text { 
-    flex-grow: 1 !important; 
-    text-align: right !important; 
-    font-family: 'Inter', -apple-system, sans-serif !important; 
-    font-size: 18px !important; 
-    line-height: 20pt !important; 
-    color: #666 !important; 
-    padding-top: 10px !important; 
-}
-
-/* PDF export fixes - no empty space above titles, move purpose to second page, review page breaks */
 @media print {
-    body, .markdown-preview-view, .print {
-        margin: 0 !important;
-        padding: 0 !important;
-        padding-top: 0 !important;
-        margin-top: 0 !important;
+    .markdown-source-view.mod-cm6 .cm-line:first-child h1,
+    body > h1:first-child {
+        display: none !important;
     }
-    
-    .top-border, .large-title, .medium-title, .cover-flex {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-    
-    img {
-        margin-top: 0 !important;
-        max-width: 100%;
-    }
-    
-    .large-title, .medium-title {
-        color: black !important;
-    }
-    
-    .version-info {
+}
+
+/* Top horizontal line */
+.horizontal-line-top {
+    border-top: 1px solid #999 !important;
+    margin-bottom: 30px !important;
+    padding-top: 30px !important;
+}
+
+/* Title styling (above image) */
+.cover-title {
+    font-family: 'Neue Haas Grotesk Display Pro', -apple-system, sans-serif !important;
+    font-size: 20pt !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.01em !important;
+    margin-bottom: 5px !important;
+}
+
+.cover-subtitle {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-size: 18pt !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 20px !important;
+}
+
+/* Bottom horizontal line */
+.horizontal-line-bottom {
+    border-bottom: 1px solid #999 !important;
+    margin-bottom: 30px !important;
+}
+
+/* Container for image and text side-by-side */
+.cover-container {
+    display: flex !important;
+    align-items: flex-start !important;
+    margin-bottom: 40px !important;
+    gap: 40px !important;
+    max-width: 100% !important;
+}
+
+/* Image wrapper - bigger size (300px) for better visibility */
+.cover-image {
+    flex-shrink: 0 !important;
+    width: 300px !important;
+    max-width: 300px !important;
+    min-width: 300px !important;
+}
+
+/* Target the actual img tag inside */
+.cover-image img {
+    width: 300px !important;
+    max-width: 300px !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Right-aligned text next to image - more space and better contrast */
+.cover-text {
+    flex-grow: 1 !important;
+    text-align: right !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 20pt !important;
+    color: #555 !important;
+    padding-top: 10px !important;
+}
+
+.cover-text .bold {
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 20pt !important;
+    color: #555 !important;
+}
+
+.cover-text .regular {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 20pt !important;
+    color: #666 !important;
+}
+
+/* Footer info - positioned at bottom of first page */
+.cover-footer {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    margin-top: 100px !important;
+    margin-bottom: 40px !important;
+    color: #666 !important;
+    position: relative !important;
+}
+
+/* Print styles for PDF export */
+@media print {
+    /* Force page break after cover section */
+    .cover-footer {
         page-break-after: always !important;
-        margin-bottom: 0 !important;
+        margin-top: auto !important;
     }
     
-    /* Make all headings black, bold, and visible in print - larger for top-level */
-    h1 {
-        color: black !important;
-        font-weight: 700 !important; 
-        font-size: 24px !important; 
-        display: block !important;
+    /* Ensure headings are visible and black in PDF */
+    h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+        page-break-after: avoid !important;
     }
     
-    h2, h3, h4, h5, h6 {
-        color: black !important;
-        font-weight: 600 !important; 
-        font-size: 20px !important; 
-        display: block !important;
+    /* Better table spacing for readability */
+    table {
+        margin: 20px 0 !important;
+        page-break-inside: avoid !important;
     }
     
-    /* Page breaks for appendices */
-    h1[id='appendix-a--dpia-template'], 
-    h1[id='appendix-b--model-card-template-for-music-models'], 
-    h1[id='appendix-c--consent-withdrawal-flow-diagram'] {
-        page-break-before: always !important;
+    /* Fixed width for Req ID column to prevent line breaks */
+    th:first-child, td:first-child {
+        min-width: 120px !important;
+        width: 120px !important;
+        white-space: nowrap !important;
     }
+    
+    th, td {
+        padding: 10px 12px !important;
+        vertical-align: top !important;
+    }
+    
+    /* Avoid breaking lists */
+    ul, ol {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Keep sections together */
+    h1, h2, h3 {
+        page-break-before: auto !important;
+        page-break-after: avoid !important;
+        margin-top: 30px !important;
+    }
+    
+    /* Ensure content after heading stays with it */
+    h1 + *, h2 + *, h3 + * {
+        page-break-before: avoid !important;
+    }
+    
+    /* Prevent orphan list items */
+    li {
+        page-break-inside: avoid !important;
+    }
+}
+
+/* Mermaid diagram responsive sizing */
+.mermaid svg {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Accessibility: Focus styles for keyboard navigation */
+a:focus, button:focus {
+    outline: 2px solid #0066cc !important;
+    outline-offset: 2px !important;
 }
