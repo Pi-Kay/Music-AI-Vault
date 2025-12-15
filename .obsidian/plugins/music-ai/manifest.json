@@ -1,0 +1,10 @@
+{
+  "id": "music-ai",
+  "name": "Music AI",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Custom AI tools for music in Obsidian",
+  "author": "Your Name",
+  "authorUrl": "https://example.com",
+  "isDesktopOnly": false
+}

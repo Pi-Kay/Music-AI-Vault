@@ -1,0 +1,158 @@
+/* Hide the H1 in preview and print */
+.markdown-preview-view h1:first-of-type, 
+.markdown-rendered h1:first-of-type { 
+    color: #666 !important; 
+    font-family: 'Inter', -apple-system, sans-serif !important; 
+    font-size: 18px !important; 
+    font-weight: 400 !important; 
+    margin-bottom: 20px !important; 
+}
+
+/* For PDF export - hide header */
+@media print { 
+    .print h1:first-of-type { 
+        display: none !important; 
+    } 
+}
+
+/* Cover styling classes */
+.top-border { 
+    border-top: 0.5px solid #999; 
+    margin-bottom: 25px; 
+}
+
+.large-title { 
+    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', -apple-system, sans-serif; 
+    font-size: 65px; 
+    font-weight: 400; 
+    line-height: 1.15; 
+    margin-bottom: 10px; 
+    letter-spacing: 0.02em; 
+    color: #ffffff; 
+}
+
+.medium-title { 
+    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', -apple-system, sans-serif; 
+    font-size: 52px; 
+    font-weight: 100; 
+    line-height: 1.15; 
+    margin-bottom: 25px; 
+    letter-spacing: 0.03em; 
+    color: #ffffff; 
+}
+
+.bottom-border { 
+    border-bottom: 0.5px solid #999; 
+    margin-bottom: 40px; 
+}
+
+.cover-flex { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 40px; 
+}
+
+.image-container { 
+    flex-shrink: 0; 
+    margin-right: 50px; 
+}
+
+.cover-text { 
+    flex-grow: 1; 
+    text-align: right; 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    font-size: 18px; 
+    line-height: 20pt; 
+    color: #666; 
+    padding-top: 10px; 
+}
+
+.bold-text { 
+    font-weight: 700; 
+}
+
+.normal-text { 
+    font-weight: 400; 
+}
+
+.version-info { 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 21pt; 
+    margin-bottom: 40px; 
+}
+
+/* Preview fixes - force flex layout and visibility */
+.markdown-preview-view .cover-flex { 
+    display: flex !important; 
+    align-items: flex-start !important; 
+    margin-bottom: 40px !important; 
+    flex-wrap: nowrap !important; 
+}
+
+.markdown-preview-view .image-container { 
+    flex-shrink: 0 !important; 
+    margin-right: 50px !important; 
+}
+
+.markdown-preview-view .cover-text { 
+    flex-grow: 1 !important; 
+    text-align: right !important; 
+    font-family: 'Inter', -apple-system, sans-serif !important; 
+    font-size: 18px !important; 
+    line-height: 20pt !important; 
+    color: #666 !important; 
+    padding-top: 10px !important; 
+}
+
+/* PDF export fixes - no empty space above titles, move purpose to second page, review page breaks */
+@media print {
+    body, .markdown-preview-view, .print {
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .top-border, .large-title, .medium-title, .cover-flex {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    img {
+        margin-top: 0 !important;
+        max-width: 100%;
+    }
+    
+    .large-title, .medium-title {
+        color: black !important;
+    }
+    
+    .version-info {
+        page-break-after: always !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Make all headings black, bold, and visible in print - larger for top-level */
+    h1 {
+        color: black !important;
+        font-weight: 700 !important; 
+        font-size: 24px !important; 
+        display: block !important;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        color: black !important;
+        font-weight: 600 !important; 
+        font-size: 20px !important; 
+        display: block !important;
+    }
+    
+    /* Page breaks for appendices */
+    h1[id='appendix-a--dpia-template'], 
+    h1[id='appendix-b--model-card-template-for-music-models'], 
+    h1[id='appendix-c--consent-withdrawal-flow-diagram'] {
+        page-break-before: always !important;
+    }
+}
