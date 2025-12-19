@@ -1,6 +1,7 @@
 {
   "enabledCssSnippets": [
     "mermaid-fix",
-    "guidance-cover"
+    "guidance-cover",
+    "image-tooltip"
   ]
 }

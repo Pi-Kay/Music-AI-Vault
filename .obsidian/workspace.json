@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9dff0f719c4f9d2d",
+        "id": "04cb2c6dc1ca1ab2",
         "type": "tabs",
         "children": [
           {
-            "id": "bb869184261f0edc",
+            "id": "18e0edf70fd6481d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 389.5
+    "width": 200
   },
   "right": {
     "id": "ca48f53061da6920",
@@ -186,14 +186,14 @@
       "yet-another-obsidian-synchronizer:YAOS": false
     }
   },
-  "active": "bb869184261f0edc",
+  "active": "18e0edf70fd6481d",
   "lastOpenFiles": [
-    "attachments/Guidance Music Ai Document copy.pdf",
     "attachments/Guidance Music Ai Document.pdf",
+    "images/cover-image-abstract-elements-light.jpg",
+    "Music AI Document.md",
+    "attachments/Guidance Music Ai Document copy.pdf",
     "attachments/Document Music AI.pdf",
     "Document Music AI.pdf",
-    "Music AI Document.md",
-    "images/cover-image-abstract-elements-light.jpg",
     "attachments/Guidance on Personal Data in Generative Music Systems.pdf",
     "attachments",
     "untitled folder",
@@ -203,7 +203,6 @@
     "Elements in space_image.jpg",
     "Guidance on Personal Data in Generative Music Systems.pdf",
     "Welcome.md",
-    "plugins/yet-another-obsidian-synchronizer/styles.css",
-    "plugins/yet-another-obsidian-synchronizer/manifest.json"
+    "plugins/yet-another-obsidian-synchronizer/styles.css"
   ]
 }
