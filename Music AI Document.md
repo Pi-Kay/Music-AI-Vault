@@ -1,4 +1,22 @@
+---
+lang: en-US
+title: "Guidance on Personal Data in Generative Music Systems"
+author: "Petra Kühnle"
+---
+
 <div class="horizontal-line-top"></div> <div class="cover-title">Guidance on Personal Data</div> <div class="cover-subtitle">in Generative Music Systems</div> <div class="horizontal-line-bottom"></div> <!-- Image and text side-by-side --> <div class="cover-container"> <div class="cover-image"> <img src="images/cover-image-abstract-elements-light.jpg" alt="Abstract geometric network visualization representing interconnected generative AI music systems. It shows circles, squares, triangles, and arrows connected by lines, symbolizing data points (like audio uploads) and flows (like training/inference processes) in a light grayscale theme for high contrast. This illustrates the complex, linked nature of personal data handling in music AI tools." title="Abstract geometric network showing AI music data flows: nodes (circles, squares, triangles) connected by arrows and lines in grayscale for contrast." width="300"></div> <div class="cover-text"> <div class="bold">Open-Source</div> <div class="bold">Science Guidance</div> <div class="regular">for AI Music Generation Tools</div> </div> </div> <!-- Footer - positioned at bottom of first page --> <div class="cover-footer"> <strong>Version 1.0</strong> | Dec 2025<br> <strong>Prepared by:</strong> Petra Kühnle </div>
+
+---
+
+## Accessibility Statement
+
+This document is provided in multiple formats to ensure accessibility:
+
+- **HTML version** (recommended) - Fully accessible with screen readers and assistive technology. Meets WCAG 2.2 Level AA standards.
+- **PDF version** - Optimized for printing and archival purposes. While structured for accessibility, the PDF format has technical limitations.
+- **Markdown source** - Available upon request for maximum flexibility.
+
+For the best accessible experience with assistive technology, **please use the HTML version**.
 
 ---
 
@@ -26,8 +44,8 @@ This guidance applies to all generative music models that:
 - [Regulation (EU) 2024/1689 (EU AI Act) – high-risk AI systems](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
 - [ICO Guidance on AI and Data Protection (2023–2025)](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/)
 - [ENISA "Securing Machine Learning Algorithms" (2021)](https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms)
-- Directive (EU) 2019/882 (European Accessibility Act) – requirements for accessible digital products and services: https://eur-lex.europa.eu/eli/dir/2019/882/oj
-- WCAG 2.2 (Web Content Accessibility Guidelines) – Level AA standards for web and document accessibility: https://www.w3.org/TR/WCAG22/
+- Directive (EU) 2019/882 (European Accessibility Act) – requirements for accessible digital products and services: [https://eur-lex.europa.eu/eli/dir/2019/882/oj](https://eur-lex.europa.eu/eli/dir/2019/882/oj)
+- WCAG 2.2 (Web Content Accessibility Guidelines) – Level AA standards for web and document accessibility: [https://www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/)
 ---
 
 # 4. Definitions
