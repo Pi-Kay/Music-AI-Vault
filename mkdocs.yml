@@ -1,3 +1,4 @@
+
 site_name: Music AI Vault
 site_url: https://pi-kay.github.io/Music-AI-Vault/
 repo_url: https://github.com/Pi-Kay/Music-AI-Vault
@@ -12,3 +13,10 @@ theme:
 nav:
   - Home: index.md  # Rename your main MD to index.md if needed
   - Guidelines: Music AI Document.md  # Adjust to match your file names
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
