@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Petra Kühnle" />
+  <title>Guidance on Personal Data in Generative Music Systems</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Guidance on Personal Data in Generative Music
+Systems</h1>
+<p class="author">Petra Kühnle</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#purpose-and-scope" id="toc-purpose-and-scope">1. Purpose
+and Scope</a></li>
+<li><a href="#document-control" id="toc-document-control">2. Document
+Control</a></li>
+<li><a href="#normative-references" id="toc-normative-references">3.
+Normative References</a></li>
+<li><a href="#definitions" id="toc-definitions">4. Definitions</a></li>
+<li><a href="#mandatory-requirements" id="toc-mandatory-requirements">5.
+Mandatory Requirements</a>
+<ul>
+<li><a href="#lawful-basis-and-consent-architecture"
+id="toc-lawful-basis-and-consent-architecture">5.1 Lawful Basis and
+Consent Architecture</a></li>
+<li><a href="#transparency-obligations"
+id="toc-transparency-obligations">5.2 Transparency Obligations</a></li>
+<li><a href="#data-protection-by-design"
+id="toc-data-protection-by-design">5.3 Data Protection by
+Design</a></li>
+<li><a href="#fairness-and-bias-mitigation"
+id="toc-fairness-and-bias-mitigation">5.4 Fairness and Bias
+Mitigation</a></li>
+<li><a href="#data-subject-rights-pipeline"
+id="toc-data-subject-rights-pipeline">5.5 Data Subject Rights
+Pipeline</a></li>
+</ul></li>
+<li><a href="#data-protection-impact-assessment-dpia"
+id="toc-data-protection-impact-assessment-dpia">6. Data Protection
+Impact Assessment (DPIA)</a></li>
+<li><a href="#record-of-processing-activities-art.-30"
+id="toc-record-of-processing-activities-art.-30">7. Record of Processing
+Activities (Art. 30)</a></li>
+<li><a href="#appendix-a-dpia-template"
+id="toc-appendix-a-dpia-template">Appendix A – DPIA Template</a>
+<ul>
+<li><a href="#projectprocessing-overview"
+id="toc-projectprocessing-overview">1. Project/Processing
+Overview</a></li>
+<li><a href="#processing-activities-description"
+id="toc-processing-activities-description">2. Processing Activities
+Description</a></li>
+<li><a href="#necessityproportionality"
+id="toc-necessityproportionality">3. Necessity/Proportionality</a></li>
+<li><a href="#risk-identificationassessment"
+id="toc-risk-identificationassessment">4. Risk
+Identification/Assessment</a></li>
+<li><a href="#mitigationssafeguards" id="toc-mitigationssafeguards">5.
+Mitigations/Safeguards</a></li>
+<li><a href="#consultation" id="toc-consultation">6.
+Consultation</a></li>
+<li><a href="#conclusionsrecommendations"
+id="toc-conclusionsrecommendations">7.
+Conclusions/Recommendations</a></li>
+<li><a href="#sign-off" id="toc-sign-off">8. Sign-Off</a></li>
+</ul></li>
+<li><a href="#appendix-b-model-card-template-for-music-models"
+id="toc-appendix-b-model-card-template-for-music-models">Appendix B –
+Model Card Template for Music Models</a>
+<ul>
+<li><a href="#model-details" id="toc-model-details">1. Model
+Details</a></li>
+<li><a href="#intended-use" id="toc-intended-use">2. Intended
+Use</a></li>
+<li><a href="#factors" id="toc-factors">3. Factors</a></li>
+<li><a href="#evaluation" id="toc-evaluation">4. Evaluation</a></li>
+<li><a href="#ethical-considerationsrisks"
+id="toc-ethical-considerationsrisks">5. Ethical
+Considerations/Risks</a></li>
+<li><a href="#training-data" id="toc-training-data">6. Training
+Data</a></li>
+<li><a href="#recommendations" id="toc-recommendations">7.
+Recommendations</a></li>
+<li><a href="#glossary" id="toc-glossary">8. Glossary</a></li>
+<li><a href="#references" id="toc-references">9. References</a></li>
+<li><a href="#acknowledgments"
+id="toc-acknowledgments">Acknowledgments</a></li>
+</ul></li>
+<li><a href="#appendix-c-consent-withdrawal-flow-diagram"
+id="toc-appendix-c-consent-withdrawal-flow-diagram">Appendix C – Consent
+Withdrawal Flow Diagram</a>
+<ul>
+<li><a href="#flow-description" id="toc-flow-description">Flow
+Description</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="horizontal-line-top">
+
+</div>
+<div class="cover-title">
+Guidance on Personal Data
+</div>
+<div class="cover-subtitle">
+in Generative Music Systems
+</div>
+<div class="horizontal-line-bottom">
+
+</div>
+<!-- Image and text side-by-side -->
+<div class="cover-container">
+<div class="cover-image">
+<img src="images/cover-image-abstract-elements-light.jpg" alt="Abstract geometric network visualization representing interconnected generative AI music systems. It shows circles, squares, triangles, and arrows connected by lines, symbolizing data points (like audio uploads) and flows (like training/inference processes) in a light grayscale theme for high contrast. This illustrates the complex, linked nature of personal data handling in music AI tools." title="Abstract geometric network showing AI music data flows: nodes (circles, squares, triangles) connected by arrows and lines in grayscale for contrast." width="300">
+</div>
+<div class="cover-text">
+<div class="bold">
+Open-Source
+</div>
+<div class="bold">
+Science Guidance
+</div>
+<div class="regular">
+for AI Music Generation Tools
+</div>
+</div>
+</div>
+<!-- Footer - positioned at bottom of first page -->
+<div class="cover-footer">
+<strong>Version 1.0</strong> | Dec 2025<br> <strong>Prepared
+by:</strong> Petra Kühnle
+</div>
+<hr />
+<h1 id="purpose-and-scope">1. Purpose and Scope</h1>
+<p>This guidance applies to all generative music models that:</p>
+<ul>
+<li>Accept user-uploaded audio (voice, instrument, full tracks)</li>
+<li>Use such uploads for training, fine-tuning, or inference</li>
+<li>Generate new musical output for end users</li>
+</ul>
+<hr />
+<h1 id="document-control">2. Document Control</h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Editor</th>
+<th>Summary of changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Dec 2025</td>
+<td>Petra Kühnle</td>
+<td>Petra Kühnle</td>
+<td>Initial release</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="normative-references">3. Normative References</h1>
+<ul>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">Regulation
+(EU) 2016/679 (GDPR)</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Regulation
+(EU) 2024/1689 (EU AI Act) – high-risk AI systems</a></li>
+<li><a
+href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/">ICO
+Guidance on AI and Data Protection (2023–2025)</a></li>
+<li><a
+href="https://www.enisa.europa.eu/publications/securing-machine-learning-algorithms">ENISA
+“Securing Machine Learning Algorithms” (2021)</a></li>
+<li>Directive (EU) 2019/882 (European Accessibility Act) – requirements
+for accessible digital products and services: <a
+href="https://eur-lex.europa.eu/eli/dir/2019/882/oj">https://eur-lex.europa.eu/eli/dir/2019/882/oj</a></li>
+<li><h2
+id="wcag-2.2-web-content-accessibility-guidelines-level-aa-standards-for-web-and-document-accessibility-httpswww.w3.orgtrwcag22">WCAG
+2.2 (Web Content Accessibility Guidelines) – Level AA standards for web
+and document accessibility: <a
+href="https://www.w3.org/TR/WCAG22/">https://www.w3.org/TR/WCAG22/</a></h2></li>
+</ul>
+<h1 id="definitions">4. Definitions</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Training Data Opt-In</strong></td>
+<td>Explicit, granular, and withdrawable consent to use uploaded audio
+for model training</td>
+</tr>
+<tr>
+<td><strong>Voice Biometric Data</strong></td>
+<td>Special-category personal data under Art. 9 GDPR</td>
+</tr>
+<tr>
+<td><strong>Style Leakage</strong></td>
+<td>Unintended reproduction of an individual artist’s recognizable style
+in outputs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="mandatory-requirements">5. Mandatory Requirements</h1>
+<h2 id="lawful-basis-and-consent-architecture">5.1 Lawful Basis and
+Consent Architecture</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Req ID</th>
+<th>Requirement</th>
+<th>Implementation Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LB-01</strong></td>
+<td>Explicit consent required for any training use</td>
+<td>Default OFF, separate checkbox</td>
+</tr>
+<tr>
+<td><strong>LB-02</strong></td>
+<td>Consent withdrawal must trigger data deletion pipeline</td>
+<td>One-click “Remove my data” button</td>
+</tr>
+<tr>
+<td><strong>LB-03</strong></td>
+<td>No bundling of training consent with service access</td>
+<td>Freely given (Recital 43)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="transparency-obligations">5.2 Transparency Obligations</h2>
+<table>
+<thead>
+<tr>
+<th>Req ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TR-01</strong></td>
+<td>Privacy notice at point of upload (layered notice)</td>
+</tr>
+<tr>
+<td><strong>TR-02</strong></td>
+<td>Inform users if outputs may contain traces of others’ data</td>
+</tr>
+<tr>
+<td><strong>TR-03</strong></td>
+<td>Provide high-level explanation of how the model works</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-protection-by-design">5.3 Data Protection by Design</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Req ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DP-01</strong></td>
+<td>End-to-end encryption of raw uploads</td>
+</tr>
+<tr>
+<td><strong>DP-02</strong></td>
+<td>Automatic deletion of raw audio after 30 days unless opted-in for
+longer retention</td>
+</tr>
+<tr>
+<td><strong>DP-03</strong></td>
+<td>Training-data anonymization where technically feasible</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fairness-and-bias-mitigation">5.4 Fairness and Bias
+Mitigation</h2>
+<table>
+<thead>
+<tr>
+<th>Req ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FB-01</strong></td>
+<td>Document demographic/genre distribution of training data</td>
+</tr>
+<tr>
+<td><strong>FB-02</strong></td>
+<td>Annual bias audit of generated outputs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-subject-rights-pipeline">5.5 Data Subject Rights
+Pipeline</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Req ID</th>
+<th>Maximum Response Time</th>
+<th>Technical Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Access (Art. 15)</strong></td>
+<td>30 days</td>
+<td>Download raw + embeddings</td>
+</tr>
+<tr>
+<td><strong>Erasure (Art. 17)</strong></td>
+<td>Immediate</td>
+<td>Delete + model unlearning (best effort)</td>
+</tr>
+<tr>
+<td><strong>Objection (Art. 21)</strong></td>
+<td>Immediate</td>
+<td>Block future use</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="data-protection-impact-assessment-dpia">6. Data Protection
+Impact Assessment (DPIA)</h1>
+<p>Mandatory pre-deployment DPIA template available in Appendix A.</p>
+<hr />
+<h1 id="record-of-processing-activities-art.-30">7. Record of Processing
+Activities (Art. 30)</h1>
+<p>Tracked in GitHub: <a
+href="https://github.com/Pi-Kay/Music-AI-Vault">Music AI Vault
+Repository</a></p>
+<hr />
+<div style="page-break-before: always;">
+
+</div>
+<h1 id="appendix-a-dpia-template">Appendix A – DPIA Template</h1>
+<p><strong>Version 1.0 – December 2025</strong> | Prepared by: Petra
+Kühnle</p>
+<p>This template meets Art. 35 GDPR for high-risk AI under EU AI Act.
+Complete pre-deployment for models handling personal data (e.g., voice
+biometrics). Reference guidance (e.g., 5.1 Lawful Basis). Consult DPO;
+escalate unmitigated risks to authority (e.g., ICO).</p>
+<h2 id="projectprocessing-overview">1. Project/Processing Overview</h2>
+<ul>
+<li><strong>Project Name:</strong> [Insert]</li>
+<li><strong>Department/Owner:</strong> [Insert]</li>
+<li><strong>Date of DPIA:</strong> [Insert]</li>
+<li><strong>Purpose:</strong> [Describe]</li>
+<li><strong>Stakeholders:</strong> [List]</li>
+<li><strong>Scope:</strong> [Per Section 1]</li>
+<li><strong>High-Risk Classification:</strong> [Explain, e.g., Art. 9
+special data]</li>
+</ul>
+<h2 id="processing-activities-description">2. Processing Activities
+Description</h2>
+<p><em>Per Art. 35(7)(a).</em></p>
+<ul>
+<li><strong>Personal Data Categories:</strong> [List; ref. Section
+4]</li>
+<li><strong>Data Subjects:</strong> [List]</li>
+<li><strong>Data Sources:</strong> [e.g., Opt-in uploads]</li>
+<li><strong>Operations:</strong> [Describe flows]</li>
+<li><strong>Recipients/Sharing:</strong> [List]</li>
+<li><strong>Transfers:</strong> [Yes/No; safeguards]</li>
+<li><strong>Retention:</strong> [e.g., Per DP-02]</li>
+<li><strong>Automated Decisions:</strong> [Describe]</li>
+</ul>
+<h2 id="necessityproportionality">3. Necessity/Proportionality</h2>
+<p><em>Per Art. 35(7)(b).</em></p>
+<ul>
+<li><strong>Lawful Basis:</strong> [Justify; ref. 5.1]</li>
+<li><strong>Necessity:</strong> [Explain]</li>
+<li><strong>Proportionality:</strong> [Assess]</li>
+<li><strong>Alternatives:</strong> [List]</li>
+</ul>
+<h2 id="risk-identificationassessment">4. Risk
+Identification/Assessment</h2>
+<p><em>Per Art. 35(7)(c). Use matrix (Likelihood x Impact).</em></p>
+<ul>
+<li><strong>Risks:</strong> [e.g., Privacy, bias (FB-01), style
+leakage]</li>
+<li><strong>Likelihood/Impact:</strong> [Rate]</li>
+<li><strong>Affected Rights:</strong> [e.g., GDPR rights]</li>
+</ul>
+<h2 id="mitigationssafeguards">5. Mitigations/Safeguards</h2>
+<p><em>Per Art. 35(7)(d).</em></p>
+<ul>
+<li><strong>Technical:</strong> [e.g., DP-01 encryption]</li>
+<li><strong>Organizational:</strong> [e.g., FB-02 audits]</li>
+<li><strong>Transparency:</strong> [e.g., TR-01 notices]</li>
+<li><strong>Rights Support:</strong> [Ref. 5.5]</li>
+<li><strong>Residual Risks:</strong> [Reassess]</li>
+<li><strong>Monitoring:</strong> [Plan]</li>
+</ul>
+<h2 id="consultation">6. Consultation</h2>
+<ul>
+<li><strong>Internal:</strong> [Describe]</li>
+<li><strong>External:</strong> [If needed]</li>
+<li><strong>Data Subjects:</strong> [Optional]</li>
+</ul>
+<h2 id="conclusionsrecommendations">7. Conclusions/Recommendations</h2>
+<ul>
+<li><strong>Assessment:</strong> [Summarize]</li>
+<li><strong>Action Plan:</strong> [List]</li>
+<li><strong>Review Triggers:</strong> [List]</li>
+</ul>
+<h2 id="sign-off">8. Sign-Off</h2>
+<ul>
+<li><strong>DPO:</strong> Name/Signature: ________ Date: ________</li>
+<li><strong>Owner:</strong> Name/Signature: ________ Date: ________</li>
+<li><strong>Management:</strong> Name/Signature: ________ Date:
+________</li>
+</ul>
+<p><strong>Annexes (Optional):</strong> Flows, matrix, consultations,
+links to B/C.</p>
+<p><em>Maintain living; review annually. Store per Section 7. Adapt for
+non-EU (e.g., CCPA). Ref: ICO Guidance (2023–2025), ENISA
+(2021).</em></p>
+<hr />
+<div style="page-break-before: always;">
+
+</div>
+<h1 id="appendix-b-model-card-template-for-music-models">Appendix B –
+Model Card Template for Music Models</h1>
+<p><strong>Model Card Template for Music Models</strong> | Version 1.0 –
+December 2025 | Prepared by: Petra Kühnle</p>
+<p><em>Document for transparency/compliance. Complete per model;
+maintain with Section 7.</em></p>
+<h2 id="model-details">1. Model Details</h2>
+<ul>
+<li><strong>Basic
+Info:</strong> Name/Version/Date/Developers/License/Contact</li>
+<li><strong>Description:</strong> [Architecture, I/O, capabilities]</li>
+<li><strong>Resources:</strong> [Compute, carbon estimate]</li>
+</ul>
+<h2 id="intended-use">2. Intended Use</h2>
+<ul>
+<li><strong>Primary:</strong> [Compliant scenarios]</li>
+<li><strong>Out-of-Scope:</strong> [Prohibited, e.g., no DPIA]</li>
+</ul>
+<h2 id="factors">3. Factors</h2>
+<ul>
+<li><strong>Relevant:</strong> [e.g., Bias in genres/demographics]</li>
+<li><strong>Mitigations:</strong> [Ref. FB-01/02]</li>
+</ul>
+<h2 id="evaluation">4. Evaluation</h2>
+<ul>
+<li><strong>Metrics:</strong> [e.g., FAD, leakage rate]</li>
+<li><strong>Data:</strong> [Datasets, diversity]</li>
+<li><strong>Results:</strong> [Summarize]</li>
+<li><strong>Ethics:</strong> [e.g., Consent-based data]</li>
+</ul>
+<h2 id="ethical-considerationsrisks">5. Ethical
+Considerations/Risks</h2>
+<ul>
+<li><strong>Fairness/Bias:</strong> [Risks/mitigations]</li>
+<li><strong>Privacy:</strong> [Risks/mitigations, e.g., DP-01/02]</li>
+<li><strong>Transparency:</strong> [Per TR-03]</li>
+<li><strong>Other:</strong> [e.g., Misuse]</li>
+</ul>
+<h2 id="training-data">6. Training Data</h2>
+<ul>
+<li><strong>Sources:</strong> [e.g., Opt-in]</li>
+<li><strong>Preprocessing:</strong> [e.g., Anonymization]</li>
+<li><strong>Composition:</strong> [Breakdown; ref. FB-01]</li>
+<li><strong>Controls:</strong> [Per LB-01–03]</li>
+</ul>
+<h2 id="recommendations">7. Recommendations</h2>
+<ul>
+<li><strong>Deployers:</strong> [e.g., DPIA]</li>
+<li><strong>Users:</strong> [e.g., Notices]</li>
+<li><strong>Maintenance:</strong> [Updates]</li>
+</ul>
+<h2 id="glossary">8. Glossary</h2>
+<p>[Terms from Section 4]</p>
+<h2 id="references">9. References</h2>
+<p>[From Section 3]</p>
+<p><em>Update on changes.</em></p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>Cover image generated by Grok with author’s original prompt. Content
+research accelerated by Grok from public web sources.</p>
+<hr />
+<div style="page-break-before: always;">
+
+</div>
+<h1 id="appendix-c-consent-withdrawal-flow-diagram">Appendix C – Consent
+Withdrawal Flow Diagram</h1>
+<p><strong>Consent Withdrawal Flow Diagram</strong> | Version 1.0 –
+December 2025 | Prepared by: Petra Kühnle</p>
+<p><em>Process per LB-02, Arts. 17/21 GDPR. Meets Section 5.5 response
+times.</em></p>
+<h2 id="flow-description">Flow Description</h2>
+<ol type="1">
+<li><strong>User Action:</strong> User clicks “Remove My Data”
+button</li>
+<li><strong>Confirmation:</strong> System prompts for confirmation
+<ul>
+<li>If <strong>No</strong> → Process ends</li>
+<li>If <strong>Yes</strong> → Proceed to deletion pipeline</li>
+</ul></li>
+<li><strong>Deletion Pipeline:</strong>
+<ul>
+<li>Delete raw audio (per DP-01/02)</li>
+<li>Remove embeddings from system</li>
+<li>Trigger model unlearning (best effort)</li>
+<li>Block future use (Art. 21)</li>
+</ul></li>
+<li><strong>Confirmation:</strong> Send email confirmation to user</li>
+<li><strong>Logging:</strong> Record action per Art. 30</li>
+<li><strong>Complete:</strong> Process ends</li>
+</ol>
+<hr />
+<p><strong>Visual Flowchart:</strong> <em>The Mermaid diagram code below
+generates an interactive flowchart in digital formats. In PDF exports,
+refer to the flow description above.</em></p>
+<pre class="mermaid"><code>graph TD
+    A[User Clicks &#39;Remove My Data&#39;] --&gt; B{Confirm?}
+    B --&gt;|Yes| C[Deletion Pipeline]
+    B --&gt;|No| D[End]
+    C --&gt; E[Delete Raw Audio DP-01/02]
+    C --&gt; F[Remove Embeddings]
+    E --&gt; G[Unlearning Best Effort]
+    F --&gt; G
+    G --&gt; H[Block Use Art. 21]
+    H --&gt; I[Email Confirmation]
+    I --&gt; J[Log Art. 30]
+    J --&gt; K[End]</code></pre>
+</body>
+</html>
