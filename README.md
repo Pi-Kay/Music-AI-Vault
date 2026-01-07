@@ -14,7 +14,7 @@ Key features:
 3. **Open in Obsidian**: Launch Obsidian, select "Open folder as vault", and choose the cloned folder.
 4. **View Main Content**: Open `Music AI Document.md` for the full guidelines. Use Obsidian's graph view for interconnected notes.
 
-If you're not using Obsidian, view the raw Markdown files directly on GitHub (e.g., [Music AI Document.md](Music%20AI%20Document.md)).
+If you're not using Obsidian, view the raw Markdown files directly on GitHub.
 
 ## Contributing
 Contributions are welcome! Fork the repo, make changes, and submit a pull request. Ensure adaptations align with the license.
